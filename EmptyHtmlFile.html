@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .yesBtn {
+            background-color: #ff4e88;
+            color: white;
+        }
+
+        .loveScreen {
+            font-size: 40px;
+            animation: pop 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="loginPage">
+        <h2>Confidential Access</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="showLove()">Login</button>
+    </div>
+
+    <div class="container" id="questionPage" style="display:none;">
+        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="150">
+        <h2>Do you love me? 🥺</h2>
+        <button class="yesBtn" onclick="showFinal()">Yes 💖</button>
+        <button class="yesBtn" onclick="showFinal()">Definitely Yes 😍</button>
+    </div>
+
+    <div id="finalPage" style="display:none;">
+        <div class="loveScreen">
+            I LOVE YOU SO MUCH ❤️ <br><br>
+            You are my everything 💕
+        </div>
+    </div>
+
+    <script>function showLove() {
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("questionPage").style.display = "block";
+}
+
+function showFinal() {
+    document.getElementById("questionPage").style.display = "none";
+    document.getElementById("finalPage").style.display = "flex";
+    document.body.style.background = "pink";
+}</script>
+
+</body>
+</html>
